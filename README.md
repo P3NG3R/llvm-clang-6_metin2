@@ -17,5 +17,6 @@ The first thing we should start with is the installation of freebsd.
  - Go to [official site freebsd](https://download.freebsd.org/ftp/releases/i386/i386/ISO-IMAGES/11.1/) and download [this .iso](https://download.freebsd.org/ftp/releases/i386/i386/ISO-IMAGES/11.1/FreeBSD-11.1-RELEASE-i386-dvd1.iso)
  - Then, we need install this disk image. I used a VirtualBox.
  - Now, we create a machine and all steps will be in pictures.
- - ![picture1](https://image.prntscr.com/image/019lsfttR06Wj1ruVhvULA.jpeg)
+ - ![picture1](http://prntscr.com/gwamth)
+ - ![picture2](https://image.prntscr.com/image/EgAHL9pGQ4m1Jot3VOGaVw.jpeg)
  - 
