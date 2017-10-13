@@ -71,7 +71,7 @@ First step it is open access for root users.
 ### Compile libs
 
  - Upload source. I choose [VINCHENZOO files](https://forum.turkmmo.com/konu/3516730-metin2-altyapi-server-files-guncelleme-costume-weapon-slot-effect-aciklar-fix/) and upload to /root/.
- - First lib (libgame), go to /src/Makefile and edit:
+ #### First lib (libgame), go to /src/Makefile and edit:
  ```
   CXX = g++
  ```
@@ -204,7 +204,7 @@ First step it is open access for root users.
  If successful, then there will be libsql.a
 
  - Sixth lib (libthecore):
- In this lib very much needs to be corrected. So I suggest just delete old files and upload my (./some files/libthecore).
+ In this lib very much needs to be corrected. So I suggest just delete old files and [upload my (./some files/libthecore)](https://github.com/nikita322/llvm-clang-6_metin2/tree/master/some%20files/libthecore).
  ```
   gmake clean
   gmake dep
