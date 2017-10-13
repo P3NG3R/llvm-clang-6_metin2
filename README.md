@@ -67,7 +67,12 @@ First step it is open access for root users.
  - pkg install gmake
  - pkg install subversion
  - pkg install clang-devel
- 
- 
- 
- - pkg clean
+
+### Compile libs
+
+ - Upload source. I choose [VINCHENZOO files](https://forum.turkmmo.com/konu/3516730-metin2-altyapi-server-files-guncelleme-costume-weapon-slot-effect-aciklar-fix/) and upload to /root/.
+ - First lib (libgame), go to /src/Makefile and edit:
+ -- CXX	= clang++-devel
+ -- CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++ -I../include
+
+
