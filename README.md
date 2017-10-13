@@ -50,7 +50,10 @@ First step it is open access for root users.
  - Then found line "#PermitRootLogin no" and change to "PermitRootLogin yes". ![freebsdsetting1](https://image.prntscr.com/image/f5GWdT7gTkSz6v7uB4kPtA.jpeg)
  - Save changes (ESC -> ENTER -> ENTER).
  - Restart SSHD (service sshd restart).
- - And last step. ![freebsdsetting2](https://image.prntscr.com/image/xzwcP0opRvWokA6SHqPH-A.jpeg)
+ - ![freebsdsetting2](https://image.prntscr.com/image/xzwcP0opRvWokA6SHqPH-A.jpeg)
+ - Then we need to know your local ip. Press ("WIN + R" -> cmd -> ipconfig) ![freebsdsetting3](https://image.prntscr.com/image/oy7383dxRmm7MsqiL6eqkA.jpeg)
+ - And last step. For SFTP connection I use [WinSCP](https://winscp.net/eng/download.php) and [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for ssh. ![freebsdsetting3](https://image.prntscr.com/image/OA1vTtpyRk6ZtkjBYWMQ9g.jpeg)
+ - ![freebsdsetting3](https://image.prntscr.com/image/Pv2AEfNlRXSjMYXilPNxxQ.jpeg)
 
 ### Install some packages
 
