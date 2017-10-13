@@ -40,5 +40,4 @@ The first thing we should start with is the installation of freebsd.
  - Choose your region and time zone. Then we choose "Set Date" twice.
  - Press "ENTER" and skip twice. After, we are asked if we want to create another user. We answer "No".
  - Manual Configuration -> "No", Complete -> "Reboot".
- - Go to the settings and turn off the drive -> "Remove".
- - ![installfreebsd13](https://image.prntscr.com/image/-9sC639kSZiqiNkfTX7bGw.jpeg)
+ - Go to the settings and turn off the drive -> "Remove". ![installfreebsd13](https://image.prntscr.com/image/-9sC639kSZiqiNkfTX7bGw.jpeg)
