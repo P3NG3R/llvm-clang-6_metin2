@@ -79,4 +79,22 @@ First step it is open access for root users.
  ```
   CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++ -I../include
  ```
-
+ After write:
+ ```
+ gmake clean
+ gmake dep
+ gmake -j20
+ ```
+ and we have this error:
+ ```
+ ./../../common/stl.h:12:10: fatal error: 'ext/functional' file not found
+ #include <ext/functional>
+          ^~~~~~~~~~~~~~~~
+ 1 error generated.
+ ```
+ to fix it, go to /common/stl.h and delete 3 line.
+ ```
+ #ifdef __GNUC__
+ #include <ext/functional>
+ #endif
+ ```
