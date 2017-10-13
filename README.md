@@ -29,7 +29,7 @@ The first thing we should start with is the installation of freebsd.
  - ![installfreebsd3](https://image.prntscr.com/image/b-pMiW1_SJamPo9H3m4r1Q.jpeg)
  - ![installfreebsd4](https://image.prntscr.com/image/D1zdIQ47QAaq-h2ZMhRRcA.jpeg)
  - ![installfreebsd5](https://image.prntscr.com/image/AOVOCUEjSzy7dlyM9yHRaw.jpeg)
- - ![installfreebsd6](https://image.prntscr.com/image/JaG11tW0SuOmlSJIHscmfQ.jpeg)
+ - ![installfreebsd6](https://image.prntscr.com/image/AfQc8f7sRVSBpdrKqy_7Og.jpeg)
  - ![installfreebsd7](https://image.prntscr.com/image/TTdQc8aURSyBXVKcjD94qw.jpeg)
  - ![installfreebsd8](https://image.prntscr.com/image/qfz8DnstSzaG3z5sr8hZ8g.jpeg)
  - Then, start the virtual machine and presses "install".
@@ -62,3 +62,12 @@ First step it is open access for root users.
 
 ### Install some packages
 
+ - pkg update
+ - pkg upgrade
+ - pkg install gmake
+ - pkg install subversion
+ - pkg install clang-devel
+ 
+ 
+ 
+ - pkg clean
