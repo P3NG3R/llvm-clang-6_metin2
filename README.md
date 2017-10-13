@@ -70,7 +70,7 @@ First step it is open access for root users.
 
 ### Compile libs
 
- - Upload source. I choose [VINCHENZOO files](https://forum.turkmmo.com/konu/3516730-metin2-altyapi-server-files-guncelleme-costume-weapon-slot-effect-aciklar-fix/) and upload to /root/.
+ - Upload source. I choose [VINCHENZOO files](https://forum.turkmmo.com/konu/3516730-metin2-altyapi-server-files-guncelleme-costume-weapon-slot-effect-aciklar-fix/) and upload to /root/ (although this is not important).
  - #### First lib (libgame), go to /src/Makefile and edit:
  ```
   CXX = g++
@@ -112,7 +112,7 @@ First step it is open access for root users.
  ```
  Then compile again (gmake -j20). If successful, then in the folder lib there will be libgame.a
  
- - Second lib (liblua), go to /config and edit:
+ - #### Second lib (liblua), go to /config and edit:
  ```
   CC= clang-devel
  ```
@@ -123,7 +123,7 @@ First step it is open access for root users.
  ```
  If successful, then in the folder lib there will be liblua.a & liblualib.a
 
- - Third lib (libpoly), go to /Makefile and edit:
+ - #### Third lib (libpoly), go to /Makefile and edit:
  ```
   CXX = g++
  ```
@@ -151,7 +151,7 @@ First step it is open access for root users.
  ```
  If successful, then there will be libpoly.a
 
- - Fourth lib (libserverkey), go to /Makefile and edit:
+ - #### Fourth lib (libserverkey), go to /Makefile and edit:
  ```
   CXX = g++
  ```
@@ -179,7 +179,7 @@ First step it is open access for root users.
  ```
  If successful, then there will be libserverkey.a
 
- - Fifth lib (libsql), go to /Makefile and edit:
+ - #### Fifth lib (libsql), go to /Makefile and edit:
  ```
   CXX = g++
  ```
@@ -203,7 +203,7 @@ First step it is open access for root users.
  ```
  If successful, then there will be libsql.a
 
- - Sixth lib (libthecore):
+ - #### Sixth lib (libthecore):
  In this lib very much needs to be corrected. So I suggest just delete old files and [upload my (./some files/libthecore)](https://github.com/nikita322/llvm-clang-6_metin2/tree/master/some%20files/libthecore).
  ```
   gmake clean
@@ -213,4 +213,54 @@ First step it is open access for root users.
 
  If successful, then there will be libthecore.a
 
+ - #### With game we finished. Now let's look at the folder Extern.
+ - #### First we download [boost from official site](http://www.boost.org/) choose the latest version (now it is 1.65.1) and click to boost_1_65_1.tar.gz
+ - Delete (rm -rf boost) folder "boost".
+ - Upload to server and unpack (tar -xf boost_1_65_1.tar.gz).
+ - Go to ./boost_1_65_1 and move(mv boost ../) folder to ../
+ - Then delete folder(rm -rf boost_1_65_1) "boost_1_65_1" and archive(rm -rf boost_1_65_1.tar.gz) "boost_1_65_1.tar.gz". Boost lib no need to compile, so we finished with it.
+
+ - #### Second step [cryptopp lib](https://github.com/weidai11/cryptopp/releases/tag/CRYPTOPP_5_6_5) choose [Source code (tar.gz)](https://github.com/weidai11/cryptopp/archive/CRYPTOPP_5_6_5.tar.gz)
+ - Delete (rm -rf cryptopp) folder "cryptopp".
+ - Upload to server and unpack (tar -xf cryptopp-CRYPTOPP_5_6_5.tar.gz).
+ - In ./cryptopp-CRYPTOPP_5_6_5/GNUmakefile we found:
+ ```
+  .PHONY: all
+ ```
+ and add above
+ ```
+  СС = clang-devel
+  CXX	= clang++-devel -std=c++17
+ ```
+ ok, now need disable sha asm & disable vmac asm. Open sha.cpp looking for a line:
+ ```
+  #if defined(CRYPTOPP_DISABLE_SHA_ASM)
+ ```
+ and add above
+ ```
+  #define CRYPTOPP_DISABLE_SHA_ASM
+ ```
+ Open vmac.cpp looking for a line:
+ ```
+  #if defined(CRYPTOPP_DISABLE_VMAC_ASM)
+ ```
+ and add above
+ ```
+  #define CRYPTOPP_DISABLE_VMAC_ASM
+ ```
+ Open sha.h looking for a line:
+ ```
+  #if defined(CRYPTOPP_LLVM_CLANG_VERSION) && (CRYPTOPP_LLVM_CLANG_VERSION < 30400)
+  # define CRYPTOPP_DISABLE_SHA_ASM
+  #endif
+ ```
+ and replace it with
+ ```
+  #define CRYPTOPP_DISABLE_SHA_ASM
+ ```
+ ```
+  gmake clean
+  gmake -j20
+ ```
+ After compile move(mv libcryptopp.a ../../lib) to lib folder and rename cryptopp-CRYPTOPP_5_6_5 to cryptopp
 

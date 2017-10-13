@@ -4,7 +4,7 @@ BIN     = ./lib/libthecore.a
 
 IFLAGS = -Iinclude
 
-CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++1z -stdlib=libc++
+CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++
 
 LIBS =
 
