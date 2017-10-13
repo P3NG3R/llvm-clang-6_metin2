@@ -73,28 +73,144 @@ First step it is open access for root users.
  - Upload source. I choose [VINCHENZOO files](https://forum.turkmmo.com/konu/3516730-metin2-altyapi-server-files-guncelleme-costume-weapon-slot-effect-aciklar-fix/) and upload to /root/.
  - First lib (libgame), go to /src/Makefile and edit:
  ```
+  CXX = g++
+ ```
+ replace it with
+ ```
   CXX = clang++-devel
  ```
  and
+ ```
+  ifeq ($(GCC_VERSION), 4)
+  CFLAGS  = -Wall -O2 -pipe -mtune=i686 -fno-exceptions -fno-rtti
+  else
+  CFLAGS  = -Wall -O2 -pipe -mcpu=i686 -fno-exceptions -fno-rtti
+  endif
+ ```
+ replace it with
  ```
   CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++ -I../include
  ```
  After write:
  ```
- gmake clean
- gmake dep
- gmake -j20
+  gmake clean
+  gmake dep
+  gmake -j20
  ```
  and we have this error:
  ```
- ./../../common/stl.h:12:10: fatal error: 'ext/functional' file not found
- #include <ext/functional>
-          ^~~~~~~~~~~~~~~~
- 1 error generated.
+  ./../../common/stl.h:12:10: fatal error: 'ext/functional' file not found
+  #include <ext/functional>
+           ^~~~~~~~~~~~~~~~
+  1 error generated.
  ```
  to fix it, go to /common/stl.h and delete 3 line.
  ```
- #ifdef __GNUC__
- #include <ext/functional>
- #endif
+  #ifdef __GNUC__
+  #include <ext/functional>
+  #endif
  ```
+ Then compile again (gmake -j20). If successful, then in the folder lib there will be libgame.a
+ 
+ - Second lib (liblua), go to /config and edit:
+ ```
+  CC= clang-devel
+ ```
+ After write:
+ ```
+  gmake clean
+  gmake -j20
+ ```
+ If successful, then in the folder lib there will be liblua.a & liblualib.a
+
+ - Third lib (libpoly), go to /Makefile and edit:
+ ```
+  CXX = g++
+ ```
+ replace it with
+ ```
+  CXX = clang++-devel
+ ```
+ and
+ ```
+  ifeq ($(GCC_VERSION), 4)
+  CFLAGS  = -Wall -O2 -pipe -mtune=i686 -fno-exceptions -fno-rtti
+  else
+  CFLAGS  = -Wall -O2 -pipe -mcpu=i686 -fno-exceptions -fno-rtti
+  endif
+ ```
+ replace it with
+ ```
+  CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++
+ ```
+ After write:
+ ```
+  gmake clean
+  gmake dep
+  gmake -j20
+ ```
+ If successful, then there will be libpoly.a
+
+ - Fourth lib (libserverkey), go to /Makefile and edit:
+ ```
+  CXX = g++
+ ```
+ replace it with
+ ```
+  CXX = clang++-devel
+ ```
+ and
+ ```
+  ifeq ($(GCC_VERSION), 4)
+  CFLAGS  = -Wall -O2 -pipe -mtune=i686 -fno-exceptions -fno-rtti
+  else
+  CFLAGS  = -Wall -O2 -pipe -mcpu=i686 -fno-exceptions -fno-rtti
+  endif
+ ```
+ replace it with
+ ```
+  CFLAGS = -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++
+ ```
+ After write:
+ ```
+  gmake clean
+  gmake dep
+  gmake -j20
+ ```
+ If successful, then there will be libserverkey.a
+
+ - Fifth lib (libsql), go to /Makefile and edit:
+ ```
+  CXX = g++
+ ```
+ replace it with
+ ```
+  CXX = clang++-devel
+ ```
+ and
+ ```
+  CFLAGS  = $(IFLAGS) -Wall -O2 -pipe -mtune=i686 -D_THREAD_SAFE -fno-exceptions 
+ ```
+ replace it with
+ ```
+  CFLAGS = $(IFLAGS) -Wall -Ofast -D_THREAD_SAFE -pipe -msse2 -mssse3 -m32 -fno-exceptions -std=c++17 -stdlib=libc++
+ ```
+ After write:
+ ```
+  gmake clean
+  gmake dep
+  gmake -j20
+ ```
+ If successful, then there will be libsql.a
+
+ - Sixth lib (libthecore):
+ In this lib very much needs to be corrected. So I suggest just delete old files and upload my (./some files/libthecore).
+ ```
+  gmake clean
+  gmake dep
+  gmake -j20
+ ```
+
+ If successful, then there will be libthecore.a
+
+

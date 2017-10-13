@@ -1,0 +1,63 @@
+buffer.o: src/buffer.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+des.o: src/des.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h src/DES_table.h
+fdwatch.o: src/fdwatch.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+gost.o: src/gost.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+gost_old.o: src/gost_old.cpp
+hangul.o: src/hangul.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+heart.o: src/heart.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+kstbl.o: src/kstbl.cpp
+log.o: src/log.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+main.o: src/main.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+memcpy.o: src/memcpy.cpp
+signal.o: src/signal.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+socket.o: src/socket.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+tea.o: src/tea.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+utils.o: src/utils.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
+xdirent.o: src/xdirent.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+xgetopt.o: src/xgetopt.cpp include/stdafx.h include/typedef.h \
+  include/heart.h include/fdwatch.h include/socket.h include/kstbl.h \
+  include/hangul.h include/buffer.h include/signal.h include/log.h \
+  include/main.h include/utils.h include/crypt.h include/memcpy.h
+xmd5.o: src/xmd5.cpp include/stdafx.h include/typedef.h include/heart.h \
+  include/fdwatch.h include/socket.h include/kstbl.h include/hangul.h \
+  include/buffer.h include/signal.h include/log.h include/main.h \
+  include/utils.h include/crypt.h include/memcpy.h
