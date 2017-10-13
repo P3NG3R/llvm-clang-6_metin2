@@ -4,6 +4,7 @@ Hello, today I will tell you how to update your old gcc to a new llvm6.
 ## Structure
 
 - Install Freebsd
+- Freebsd setting
 - Install some packages
 - Compile libs
 - Fix source
@@ -41,3 +42,15 @@ The first thing we should start with is the installation of freebsd.
  - Press "ENTER" and skip twice. After, we are asked if we want to create another user. We answer "No".
  - Manual Configuration -> "No", Complete -> "Reboot".
  - Go to the settings and turn off the drive -> "Remove". ![installfreebsd13](https://image.prntscr.com/image/-9sC639kSZiqiNkfTX7bGw.jpeg)
+
+### Freebsd setting
+
+First step it is open access for root users.
+ - Write this in command line "ee /etc/ssh/sshd_config".
+ - Then found line "#PermitRootLogin no" and change to "PermitRootLogin yes". ![freebsdsetting1](https://image.prntscr.com/image/f5GWdT7gTkSz6v7uB4kPtA.jpeg)
+ - Save changes (ESC -> ENTER -> ENTER).
+ - Restart SSHD (service sshd restart).
+ - And last step. ![freebsdsetting2](https://image.prntscr.com/image/xzwcP0opRvWokA6SHqPH-A.jpeg)
+
+### Install some packages
+
