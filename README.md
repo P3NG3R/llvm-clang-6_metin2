@@ -1,6 +1,12 @@
 # Core update to LLVM6
 Hello, today I will tell you how to update your old gcc to a new llvm6.
 
+Programm:
+ - [VirtualBox](https://www.virtualbox.org/)
+ - [WinSCP](https://winscp.net/eng/download.php)
+ - [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+ - [Notepad++](https://notepad-plus-plus.org/download)
+
 ## Structure
 
 - Install Freebsd
@@ -52,8 +58,7 @@ First step it is open access for root users.
  - Restart SSHD (service sshd restart).
  - ![freebsdsetting2](https://image.prntscr.com/image/xzwcP0opRvWokA6SHqPH-A.jpeg)
  - Then we need to know your local ip. Press ("WIN + R" -> cmd -> ipconfig) ![freebsdsetting3](https://image.prntscr.com/image/oy7383dxRmm7MsqiL6eqkA.jpeg)
- - And last step. For SFTP connection I use [WinSCP](https://winscp.net/eng/download.php) and [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for ssh. ![freebsdsetting3](https://image.prntscr.com/image/OA1vTtpyRk6ZtkjBYWMQ9g.jpeg)
- - ![freebsdsetting3](https://image.prntscr.com/image/Pv2AEfNlRXSjMYXilPNxxQ.jpeg)
+ - And last step. For SFTP connection I use [WinSCP](https://winscp.net/eng/download.php) and [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for ssh. ![freebsdsetting3](https://image.prntscr.com/image/OA1vTtpyRk6ZtkjBYWMQ9g.jpeg) ![freebsdsetting3](https://image.prntscr.com/image/Pv2AEfNlRXSjMYXilPNxxQ.jpeg)
 
 ### Install some packages
 
